@@ -74,10 +74,6 @@ class intime {
 		poslovnicaMostarZatvori.click();
 		Thread.sleep(3000);
 		
-		JavascriptExecutor scroll = (JavascriptExecutor) webDriver;
-		scroll.executeScript("window.scrollBy(0,400)", "");
-		Thread.sleep(2000);
-		
 		WebElement ImeiPrezime = webDriver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div[2]/div[2]/input"));
 		ImeiPrezime.sendKeys("Test Tester");
 		Thread.sleep(2000);
@@ -97,14 +93,82 @@ class intime {
 		WebElement Poruka = webDriver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/div[2]/div[7]/textarea"));
 		Poruka.sendKeys("Testna poruka");
 		Thread.sleep(2000);
-		
-
-		
+				
 }
+	@Test
+	void karijeraTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		WebElement karijeraButton = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[5]/a"));
+		karijeraButton.click();
+		Thread.sleep(5000);
+		
+		WebElement Ime = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[2]/div[1]/div/input"));
+		Ime.sendKeys("Test");
+		Thread.sleep(2000);
+		
+		WebElement Prezime = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[2]/div[2]/div/input"));
+		Prezime.sendKeys("Tester");
+		Thread.sleep(2000);
+		
+		WebElement MjestoStanovanja = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[3]/input"));
+		MjestoStanovanja.sendKeys("Testno mjesto");
+		Thread.sleep(2000);
+		
+		WebElement Telefon = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[4]/input"));
+		Telefon.sendKeys("033 333 333");
+		Thread.sleep(2000);
+		
+		WebElement EmailAdresa = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[5]/input"));
+		EmailAdresa.sendKeys("test.tester@gmail.com");
+		Thread.sleep(2000);
+		
+		WebElement PrijavaNaRadno = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[6]/select"));
+		PrijavaNaRadno.click();
+		Thread.sleep(2000);
+		
+		WebElement ITSektor = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[6]/select/option[10]"));
+		ITSektor.click();
+		Thread.sleep(2000);
+		
+		WebElement PrijavaNaRadno2 = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[6]/select"));
+		PrijavaNaRadno2.click();
+		Thread.sleep(2000);
+		
+		WebElement Lokacija = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[7]/select"));
+		Lokacija.click();
+		Thread.sleep(2000);
+		
+		WebElement Sarajevo = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[7]/select/option[6]"));
+		Sarajevo.click();
+		Thread.sleep(2000);
+		
+		WebElement Lokacija2 = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[7]/select"));
+		Lokacija2.click();
+		Thread.sleep(2000);
+		
+		WebElement Poruka = webDriver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[2]/form/div[8]/textarea"));
+		Poruka.sendKeys("Test");
+		Thread.sleep(2000);
+		
+		WebElement scroll = webDriver.findElement(By.xpath("/html/body/div[2]/footer/div[1]/div/div[3]/ul/li[3]/a"));
+		scroll.sendKeys(Keys.PAGE_DOWN);
+		Thread.sleep(3000);
+		
+		
+		
+		
+
+		
 
 
 
 
-
-
+	}
 }
