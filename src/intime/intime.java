@@ -271,9 +271,75 @@ class intime {
 		WebElement zatvoriButton6 = webDriver.findElement(By.xpath("/html/body/div[2]/div[12]/div/div/div[3]/button"));
 		zatvoriButton6.click();
 		Thread.sleep(3000);
-		
-		
-		
 	
 }
+	@Test
+	void drugeStranice() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[2]/a[1]")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[2]/a[3]")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[1]/div/div[2]/a[5]")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		WebElement Element = webDriver.findElement(By.xpath("/html/body/div[2]/div[6]/div/div[3]/div[3]/div/a"));
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		Thread.sleep(2000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[6]/div/div[3]/div[1]/div/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+	}
 }
