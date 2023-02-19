@@ -209,4 +209,71 @@ class intime {
 		
 }
 	
+	@Test
+	void inTimeUsluge() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		WebElement Element = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[1]/div"));
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		Thread.sleep(2000);
+		
+		WebElement medjunarodniTransport = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[1]/div"));
+		medjunarodniTransport.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton = webDriver.findElement(By.xpath("/html/body/div[2]/div[7]/div/div/div[3]/button"));
+		zatvoriButton.click();
+		Thread.sleep(3000);
+		
+		WebElement medjugradskaDostava = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[2]/div"));
+		medjugradskaDostava.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton2 = webDriver.findElement(By.xpath("/html/body/div[2]/div[8]/div/div/div[3]/button"));
+		zatvoriButton2.click();
+		Thread.sleep(3000);
+		
+		WebElement uvozIzvoz = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[3]/div"));
+		uvozIzvoz.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton3 = webDriver.findElement(By.xpath("/html/body/div[2]/div[9]/div/div/div[3]/button"));
+		zatvoriButton3.click();
+		Thread.sleep(3000);
+		
+		WebElement skladistenje = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[4]/div"));
+		skladistenje.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton4 = webDriver.findElement(By.xpath("/html/body/div[2]/div[10]/div/div/div[3]/button"));
+		zatvoriButton4.click();
+		Thread.sleep(3000);
+		
+		WebElement carinsko = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[5]/div"));
+		carinsko.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton5 = webDriver.findElement(By.xpath("/html/body/div[2]/div[11]/div/div/div[3]/button"));
+		zatvoriButton5.click();
+		Thread.sleep(3000);
+		
+		WebElement specijalneUsluge = webDriver.findElement(By.xpath("/html/body/div[2]/section[1]/div/div[2]/div[6]/div"));
+		specijalneUsluge.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriButton6 = webDriver.findElement(By.xpath("/html/body/div[2]/div[12]/div/div/div[3]/button"));
+		zatvoriButton6.click();
+		Thread.sleep(3000);
+		
+		
+		
+	
+}
 }
