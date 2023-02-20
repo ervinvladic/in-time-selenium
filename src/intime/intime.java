@@ -627,7 +627,56 @@ class intime {
 		Thread.sleep(2000);
     	
 }
+	
+	@Test
+	void dodatakNaGorivoTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		WebElement dodatak1 = webDriver.findElement(By.xpath("/html/body/div[2]/div[5]/div[2]/div[2]/div/div/p[1]/a"));
+		dodatak1.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvori = webDriver.findElement(By.xpath("/html/body/div[2]/div[13]/div/div/div[3]/button"));
+		zatvori.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[5]/div[2]/div[2]/div/div/p[2]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		webDriver.findElement(By.xpath("/html/body/div[2]/div[5]/div[2]/div[2]/div/div/p[3]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		
 
 
 
-}
+}}
