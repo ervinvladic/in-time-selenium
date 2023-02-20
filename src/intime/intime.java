@@ -479,7 +479,36 @@ class intime {
 		WebElement loginButton = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/section/form/div[5]/div/input"));
 		loginButton.click();
 		Thread.sleep(2000);
+	}
+	
+	@Test
+	void oNamaTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
 		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		Actions actions = new Actions(webDriver);
+    	WebElement menuOption = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[2]/a"));
+    	actions.moveToElement(menuOption).perform();
+    	Thread.sleep(2000);
+		
+		WebElement oNamaButton2 = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[2]/ul/li[1]/a"));
+		oNamaButton2.click();
+		Thread.sleep(6000);
+		
+		Actions actions2 = new Actions(webDriver);
+    	WebElement menuOption2 = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[2]/a"));
+    	actions2.moveToElement(menuOption2).perform();
+    	
+    	WebElement opciUsloviPoslovanja = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[2]/ul/li[2]/a"));
+		opciUsloviPoslovanja.click();
+		Thread.sleep(6000);
+    	
+    	
 		
 		
 		
