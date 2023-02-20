@@ -48,6 +48,10 @@ class intime {
 		
 
 }
+	/*  Testiranje Kontakt opcije(gledanje vise informacija 
+	 *  za poslovnice u Mostaru i Sarajevu, 
+	 *  te popunjavanje forme za kontaktiranje.
+	 *    */
 	@Test
 	void kontaktTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -99,6 +103,8 @@ class intime {
 		Thread.sleep(2000);
 				
 }
+	/* Testiranje Karijera opcije 
+	 * i popunjavanje forme za prijavu na odredjeni posao  */
 	@Test
 	void karijeraTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -167,6 +173,8 @@ class intime {
 		
 	}
 	
+	/* Testiranje odlaska sa IN Time stranice na stranice drustvenih mreza
+	 * (Instagram,Facebook) */
 	@Test
 	void drustveneMreze() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -212,7 +220,7 @@ class intime {
 		Thread.sleep(2000);
 		
 }
-	
+	/* Testiranje dugmadi koje daju vise informacija o IN Time uslugama  */
 	@Test
 	void inTimeUsluge() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -277,6 +285,8 @@ class intime {
 		Thread.sleep(3000);
 	
 }
+	/* Testiranje odlaska sa IN Time stranice na ostale partnerske IN Time kompanije 
+	 * Hrvatska, Slovenija, Srbija */
 	@Test
 	void drugeStranice() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -346,7 +356,8 @@ class intime {
 		
 		Thread.sleep(5000);
 	}
-	
+	/* Testiranje sistema za pracenje posiljke 
+	 * Testirano za sve IN Time, TNT, Fedex  */
 	@Test
 	void pracenjePosiljke() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -379,6 +390,7 @@ class intime {
 		Thread.sleep(2000);
 		
 }
+	/* Testiranje opcije uslovi poslovanja*/
 	@Test
 	void usloviPoslovanja() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -438,6 +450,7 @@ class intime {
 		Thread.sleep(2000);
 		
 }
+	/* Testiranje logina za Cycle*/
 	@Test
 	void korisnickiLogin() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -481,6 +494,7 @@ class intime {
 		Thread.sleep(2000);
 	}
 	
+	/* Testiranje oNama cpcije (vise informacija o kompaniji*/
 	@Test
 	void oNamaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -509,6 +523,7 @@ class intime {
 		Thread.sleep(6000);		
 	}
 	
+	/* Testiranje TNT opcije (vidi vise informacija o TNTu)*/
 	@Test
 	void TNTtest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -568,6 +583,7 @@ class intime {
 		Thread.sleep(2000);
     	
 }
+	/* Testiranje Fedex opcije (vidi vise informacija o Fedexu)*/
 	@Test
 	void FedexTest() throws InterruptedException {
 		webDriver.get(baseUrl);
@@ -627,7 +643,7 @@ class intime {
 		Thread.sleep(2000);
     	
 }
-	
+	/* Testiranje buttona za korisnike da vide vise informacija o dodacima na gorivo*/
 	@Test
 	void dodatakNaGorivoTest() throws InterruptedException {
 		webDriver.get(baseUrl);
