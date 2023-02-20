@@ -567,4 +567,67 @@ class intime {
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
     	
-}}
+}
+	@Test
+	void FedexTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		Actions actions = new Actions(webDriver);
+    	WebElement menuOption = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/a"));
+    	actions.moveToElement(menuOption).perform();
+    	Thread.sleep(2000);
+    	
+    	WebElement FEDex = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/ul/li[1]/a"));
+		FEDex.click();
+		Thread.sleep(6000);
+		
+		Actions actions2 = new Actions(webDriver);
+    	WebElement menuOption2 = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/a"));
+    	actions2.moveToElement(menuOption2).perform();
+    	Thread.sleep(2000);
+    	
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/ul/li[2]/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+		
+		Actions actions3 = new Actions(webDriver);
+    	WebElement menuOption3 = webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/a"));
+    	actions3.moveToElement(menuOption3).perform();
+    	Thread.sleep(2000);
+    	
+    	webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[1]/li[4]/ul/li[3]/a")).click();
+		
+		for(String handle2: webDriver.getWindowHandles()) {
+			if (!handle2.equals(handle1)) {
+				webDriver.switchTo().window(handle2);
+				break;
+			}
+		}
+		Thread.sleep(5000);
+		webDriver.close();
+		webDriver.switchTo().window(handle1);
+		Thread.sleep(2000);
+    	
+}
+
+
+
+}
