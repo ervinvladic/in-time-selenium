@@ -3,6 +3,7 @@ package intime;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.awt.Desktop.Action;
+import java.time.Duration;
 
 import org.junit.Ignore;
 import org.junit.jupiter.api.AfterAll;
@@ -17,6 +18,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 class intime {
@@ -434,4 +438,56 @@ class intime {
 		Thread.sleep(2000);
 		
 }
+	@Test
+	void korisnickiLogin() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[2]/li/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		
+		WebElement login = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[2]/li[2]/a"));
+		login.click();
+		Thread.sleep(2000);
+		
+		WebElement email = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/section/form/div[2]/div/input"));
+		email.sendKeys("test.tester@gmail.com");
+		Thread.sleep(2000);
+		
+		WebElement password = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/section/form/div[3]/div/input"));
+		password.sendKeys("testnipassword");
+		Thread.sleep(2000);
+		
+		WebElement rememberMe = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/section/form/div[4]/div/div/input[1]"));
+		rememberMe.click();
+		Thread.sleep(2000);
+		
+		WebElement loginButton = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/section/form/div[5]/div/input"));
+		loginButton.click();
+		Thread.sleep(2000);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 }
