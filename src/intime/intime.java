@@ -342,4 +342,37 @@ class intime {
 		
 		Thread.sleep(5000);
 	}
+	
+	@Test
+	void pracenjePosiljke() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		WebElement Element = webDriver.findElement(By.xpath("/html/body/div[2]/section[2]/div/div[2]/div/div/div[1]/div/h3"));
+		JavascriptExecutor js = (JavascriptExecutor) webDriver;
+		js.executeScript("arguments[0].scrollIntoView();", Element);
+		Thread.sleep(2000);
+		
+		WebElement Search = webDriver.findElement(By.xpath("/html/body/div[2]/section[2]/div/div[2]/div/div/div[1]/div/div[1]/div/input"));
+		Search.sendKeys("Test");
+		Thread.sleep(2000);
+		
+		WebElement INTime = webDriver.findElement(By.xpath("/html/body/div[2]/section[2]/div/div[2]/div/div/div[1]/div/div[2]/div[1]/div"));
+		INTime.click();
+		Thread.sleep(2000);
+		
+		WebElement TNTExpress = webDriver.findElement(By.xpath("/html/body/div[2]/section[2]/div/div[2]/div/div/div[1]/div/div[2]/div[2]/div"));
+		TNTExpress.click();
+		Thread.sleep(2000);
+		
+		WebElement Fedex = webDriver.findElement(By.xpath("/html/body/div[2]/section[2]/div/div[2]/div/div/div[1]/div/div[2]/div[3]/div"));
+		Fedex.click();
+		Thread.sleep(2000);
+		
+}
 }
