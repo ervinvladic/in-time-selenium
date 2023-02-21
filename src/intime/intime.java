@@ -855,5 +855,44 @@ class intime {
 		Thread.sleep(4000);
 		
 	}
+	/* Testiranje drugih opcija u Cycle*/
+	@Test
+	void drugeOpcijeTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[2]/li/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		
+		WebElement register = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[2]/li[1]/a"));
+		register.click();
+		Thread.sleep(3000);
+		
+		WebElement trackingAndReporting = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[1]/a"));
+		trackingAndReporting.click();
+		Thread.sleep(3000);
+		
+		WebElement saznajteVise = webDriver.findElement(By.xpath("/html/body/div[2]/div/div[1]/div/div/a/button/span"));
+		saznajteVise.click();
+		Thread.sleep(3000);
+		
+		WebElement zatvoriNapomenu2 = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu2.click();
+		Thread.sleep(3000);
 
+}
 }
