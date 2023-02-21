@@ -10,6 +10,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -53,6 +54,7 @@ class intime {
 	 *  te popunjavanje forme za kontaktiranje.
 	 *    */
 	@Test
+	@Order(5)
 	void kontaktTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -106,6 +108,7 @@ class intime {
 	/* Testiranje Karijera opcije 
 	 * i popunjavanje forme za prijavu na odredjeni posao  */
 	@Test
+	@Order(4)
 	void karijeraTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -176,6 +179,7 @@ class intime {
 	/* Testiranje odlaska sa IN Time stranice na stranice drustvenih mreza
 	 * (Instagram,Facebook) */
 	@Test
+	@Order(11)
 	void drustveneMreze() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -222,6 +226,7 @@ class intime {
 }
 	/* Testiranje dugmadi koje daju vise informacija o IN Time uslugama  */
 	@Test
+	@Order(11)
 	void inTimeUsluge() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -288,6 +293,7 @@ class intime {
 	/* Testiranje odlaska sa IN Time stranice na ostale partnerske IN Time kompanije 
 	 * Hrvatska, Slovenija, Srbija */
 	@Test
+	@Order(6)
 	void drugeStranice() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -359,6 +365,7 @@ class intime {
 	/* Testiranje sistema za pracenje posiljke 
 	 * Testirano za sve IN Time, TNT, Fedex  */
 	@Test
+	@Order(7)
 	void pracenjePosiljke() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -392,6 +399,7 @@ class intime {
 }
 	/* Testiranje opcije uslovi poslovanja*/
 	@Test
+	@Order(8)
 	void usloviPoslovanja() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -452,6 +460,7 @@ class intime {
 }
 	/* Testiranje logina za Cycle*/
 	@Test
+	@Order(12)
 	void korisnickiLogin() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -496,6 +505,7 @@ class intime {
 	
 	/* Testiranje oNama cpcije (vise informacija o kompaniji*/
 	@Test
+	@Order(1)
 	void oNamaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -525,6 +535,7 @@ class intime {
 	
 	/* Testiranje TNT opcije (vidi vise informacija o TNTu)*/
 	@Test
+	@Order(2)
 	void TNTtest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -585,6 +596,7 @@ class intime {
 }
 	/* Testiranje Fedex opcije (vidi vise informacija o Fedexu)*/
 	@Test
+	@Order(3)
 	void FedexTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -645,6 +657,7 @@ class intime {
 }
 	/* Testiranje buttona za korisnike da vide vise informacija o dodacima na gorivo*/
 	@Test
+	@Order(9)
 	void dodatakNaGorivoTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -693,6 +706,7 @@ class intime {
 }
 	/* Testiranje opcije Kontakt i uputstvo u Cycle*/
 	@Test
+	@Order(15)
 	void uputstvoKontaktTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -724,6 +738,7 @@ class intime {
 	}
 	/* Testiranje buttona za posiljke u Cycle*/
 	@Test
+	@Order(13)
 	void posiljkeTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -773,6 +788,7 @@ class intime {
 	}
 	/* Testiranje opcije Kontakti u Cycle*/
 	@Test
+	@Order(14)
 	void kontaktiTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -815,6 +831,7 @@ class intime {
 	}
 	/* Testiranje opcije Administracija u Cycle*/
 	@Test
+	@Order(15)
 	void administracijaTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
@@ -857,6 +874,7 @@ class intime {
 	}
 	/* Testiranje drugih opcija u Cycle*/
 	@Test
+	@Order(16)
 	void drugeOpcijeTest() throws InterruptedException {
 		webDriver.get(baseUrl);
 		webDriver.manage().window().maximize();
