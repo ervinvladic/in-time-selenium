@@ -721,13 +721,54 @@ class intime {
 		WebElement uputstvoCycle = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[5]/a"));
 		uputstvoCycle.click();
 		Thread.sleep(3000);
-
-
-
-
-
-
-
-
+	}
+	/* Testiranje buttona za posiljke u Cycle*/
+	@Test
+	void posiljkeTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[2]/li/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		
+		
+    	
+		WebElement menu = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/a"));
+		menu.click();
+		Thread.sleep(4000);
+    	
+		WebElement novaPosiljka = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/ul/li[1]/a"));
+		novaPosiljka.click();
+		Thread.sleep(4000);
+		
+		WebElement menu2 = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/a"));
+		menu2.click();
+		Thread.sleep(4000);
+    	
+		WebElement pregledPosiljki = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/ul/li[3]/a"));
+		pregledPosiljki.click();
+		Thread.sleep(4000);
+		
+		WebElement menu3 = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/a"));
+		menu3.click();
+		Thread.sleep(4000);
+    	
+		WebElement excelUpload = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[1]/ul/li[4]/a"));
+		excelUpload.click();
+		Thread.sleep(4000);
 	}
 }
