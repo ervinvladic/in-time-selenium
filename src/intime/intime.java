@@ -771,4 +771,46 @@ class intime {
 		excelUpload.click();
 		Thread.sleep(4000);
 	}
+	/* Testiranje opcije Kontakti u Cycle*/
+	@Test
+	void kontaktiTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
+		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
+		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[2]/li/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		
+		
+    	
+		WebElement menu = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[2]/a"));
+		menu.click();
+		Thread.sleep(4000);
+    	
+		WebElement noviKontakt = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[2]/ul/li[1]/a"));
+		noviKontakt.click();
+		Thread.sleep(4000);
+		
+		WebElement menu2 = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[2]/a"));
+		menu2.click();
+		Thread.sleep(4000);
+    	
+		WebElement pregledKontakata = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[2]/ul/li[3]/a"));
+		pregledKontakata.click();
+		Thread.sleep(4000);
+		
+	}
 }
