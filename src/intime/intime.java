@@ -690,9 +690,44 @@ class intime {
 		webDriver.close();
 		webDriver.switchTo().window(handle1);
 		Thread.sleep(2000);
+}
+	/* Testiranje opcije Kontakt i uputstvo u Cycle*/
+	@Test
+	void uputstvoKontaktTest() throws InterruptedException {
+		webDriver.get(baseUrl);
+		webDriver.manage().window().maximize();
+		Thread.sleep(5000);
 		
+		WebElement zatvoriNapomenu = webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/div/div/div/div[1]/div/button/div"));
+		zatvoriNapomenu.click();
+		Thread.sleep(3000);
 		
+		String handle1 = webDriver.getWindowHandle();
+		webDriver.findElement(By.xpath("/html/body/div[2]/nav/div/div/ul[2]/li/a")).click();
+		
+		for(String handle: webDriver.getWindowHandles()) {
+			if (!handle.equals(handle1)) {
+				webDriver.switchTo().window(handle);
+				break;
+			}
+		}
+		
+		Thread.sleep(5000);
+		
+		WebElement kontaktCycle = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[4]/a"));
+		kontaktCycle.click();
+		Thread.sleep(5000);
+		
+		WebElement uputstvoCycle = webDriver.findElement(By.xpath("/html/body/div[1]/div/div[2]/ul[1]/li[5]/a"));
+		uputstvoCycle.click();
+		Thread.sleep(3000);
 
 
 
-}}
+
+
+
+
+
+	}
+}
